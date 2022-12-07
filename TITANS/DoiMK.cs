@@ -21,19 +21,21 @@ namespace TITANS
         public DoiMK(string email)
         {
             InitializeComponent();
+
             stremail = email;
             txtemail.Text = stremail;
             txtemail.Enabled = false;
+
         }
-       
-        public void SendMail(string email, string matkhau)
+
+        public void SendMail(string matkhau)
         {
             try
             {
                 string from, to, pass, content;
-                from = "quynhngo030502@gmail.com";
+                from = "thanhtrung@gmail.com";
                 to = txtemail.Text.Trim();
-                pass = "ngoquynh020503";
+                pass = "thanhtrung";
                 content = "Chào bạn, \n Để đăng nhập TITANS, bạn vui lòng nhập mật khẩu mới là " + matkhau + ".\nCảm ơn bạn";
 
                 MailMessage mail = new MailMessage();
@@ -48,7 +50,7 @@ namespace TITANS
                 smtp.UseDefaultCredentials = false;
                 smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Credentials = new NetworkCredential(from, pass);
-                smtp.Credentials = new System.Net.NetworkCredential("quynhngo030502@gmail.com", "cxsnpvrgqikrodia");
+                smtp.Credentials = new System.Net.NetworkCredential("thanhtrung@gmail.com", "cxsnpvrgqikrodia");
                 try
                 {
                     smtp.Send(mail);
@@ -66,10 +68,11 @@ namespace TITANS
                 MessageBox.Show(ex.Message);
             }
         }
-        NhanVien_BUS NhanVien_BUS = new NhanVien_BUS();
+       Users_BUS Users_BUS = new Users_BUS();
+     NhanVien_BUS  NhanVien_BUS = new NhanVien_BUS();
         public void DoimK()
         {
-            if (txbmatkhaucu.Text.Trim().Length == 0)
+            /*if (txbmatkhaucu.Text.Trim().Length == 0)
             {
                 MessageBox.Show("Bạn phải nhập mật khẩu cũ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txbmatkhaucu.Focus();
@@ -107,18 +110,11 @@ namespace TITANS
                     string matkhaucu = NhanVien_BUS.encryption(txbmatkhaucu.Text);
                     if (NhanVien_BUS.UpdateMatKhau(txtemail.Text, matkhaucu, matkhaumoi))
                     {
-                        
-                        SendMail(stremail, txbnhaplaimkm.Text);
-                        MessageBox.Show("Cập nhật mật khẩu thành công, bạn phải đăng nhập lại");
-                        Thread.Sleep(100);
-                        Application.Exit();
-                    }
-                    else
-                    {
-                        MessageBox.Show("looi");
+                        SendMail(txbnhaplaimkm.Text);
+                        MessageBox.Show("Cập nhật mật khẩu thành công, bạn phải đăng nhập lại");     
                     }
                 }
-            }
+            }*/
         }
         private void DoiMK_Load(object sender, EventArgs e)
         {
@@ -132,7 +128,61 @@ namespace TITANS
 
         private void btdoimatkhau_Click(object sender, EventArgs e)
         {
-            DoimK();
+            if (txbmatkhaucu.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập mật khẩu cũ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbmatkhaucu.Focus();
+                return;
+            }
+            else if (txbmatkhaumoi.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập mật khẩu mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbmatkhaumoi.Focus();
+                return;
+            }
+            else if (txbnhaplaimkm.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập lại mật khẩu mới", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbnhaplaimkm.Focus();
+                return;
+            }
+            else if (txbnhaplaimkm.Text.Trim() != txbmatkhaumoi.Text.Trim())
+            {
+                MessageBox.Show("Bạn phải nhập mật khẩu mới và mật khẩu nhập lại giống nhau", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbnhaplaimkm.Focus();
+                return;
+            }
+            else if (txbnhaplaimkm.Text.Trim() == txbmatkhaucu.Text.Trim())
+            {
+                MessageBox.Show("Bạn phải nhập mật mới khác mật khẩu cũ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txbmatkhaumoi.Focus();
+                return;
+            }
+            else
+            {
+                if (MessageBox.Show("Bạn có chắc muốn đổi mật khẩu", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    /*string matkhaumoi = NhanVien_BUS.encryption(txbmatkhaumoi.Text);
+                    string matkhaucu = NhanVien_BUS.encryption(txbmatkhaucu.Text);*/
+
+
+                    string matkhaumoi = (txbmatkhaumoi.Text);
+                    string matkhaucu = (txbmatkhaucu.Text);
+
+                    if (Users_BUS.UpdateMatKhau(txtemail.Text, matkhaucu, matkhaumoi))
+                    {
+                        //SendMail(txbnhaplaimkm.Text);
+                        MessageBox.Show("Cập nhật mật khẩu thành công, bạn phải đăng nhập lại");
+                        frmDangNhap frm = new frmDangNhap();
+                        frm.ShowDialog();
+                    }
+                }
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

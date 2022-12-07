@@ -114,5 +114,57 @@ namespace DAL
             }
             return false;
         }
+
+        public bool UpdateMatKhau(string email, string matKhauCu, string matKhauMoi)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = _conn;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "doimatkhau";
+                cmd.Parameters.AddWithValue("@UserName", email);
+                cmd.Parameters.AddWithValue("@matkhaucu", matKhauCu);
+                cmd.Parameters.AddWithValue("@matkhaumoi", matKhauMoi);
+
+                if (cmd.ExecuteNonQuery() > 0)
+                {
+                    return true;
+                }
+            }
+            catch (Exception e)
+
+            {
+
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return false;
+        }
+
+        public DataTable VaiTroNhanVien(string email)
+        {
+            try
+            {
+                _conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "LayVaiTroNhanVien";
+                cmd.Parameters.AddWithValue("@userName", email);
+                //cmd.Parameters.AddWithValue("TinhTrang", tinhtrang);
+                cmd.Connection = _conn;
+                DataTable dtnhanvien = new DataTable();
+                dtnhanvien.Load(cmd.ExecuteReader());
+                return dtnhanvien;
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
     }
 }

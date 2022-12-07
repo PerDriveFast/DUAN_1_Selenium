@@ -37,6 +37,11 @@ namespace BUS
         {
             return nv.SearchNhanVien(email);
         }
+
+        /*public bool UpdateMatKhau(string email, string matkhaucu, string maukhaumoi)
+        {
+            return nv.UpdateMatKhau(email, matkhaucu, maukhaumoi);
+        }*/
         public string encryption(string password)
         {
             MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
@@ -52,9 +57,6 @@ namespace BUS
             }
             return encryptdata.ToString();
         }
-        public bool UpdateMatKhau(string email, string matKhauCu, string matKhauMoi)
-        {
-            return nv.UpdateMatKhau(email, matKhauCu, matKhauMoi);
-        }
+
     }
 }

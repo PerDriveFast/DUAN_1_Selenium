@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtemail = new Guna.UI2.WinForms.Guna2TextBox();
             this.txbmatkhaumoi = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btdoimatkhau = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -38,7 +39,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txbmatkhaucu = new Guna.UI2.WinForms.Guna2TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtemail = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,8 +46,8 @@
             // 
             this.guna2Panel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
             this.guna2Panel1.BorderThickness = 7;
-            this.guna2Panel1.Controls.Add(this.txtemail);
             this.guna2Panel1.Controls.Add(this.label5);
+            this.guna2Panel1.Controls.Add(this.txtemail);
             this.guna2Panel1.Controls.Add(this.txbmatkhaumoi);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.btdoimatkhau);
@@ -63,6 +63,29 @@
             this.guna2Panel1.TabIndex = 15;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
+            // txtemail
+            // 
+            this.txtemail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.txtemail.BorderRadius = 5;
+            this.txtemail.BorderThickness = 3;
+            this.txtemail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtemail.DefaultText = "";
+            this.txtemail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtemail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtemail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtemail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtemail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtemail.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtemail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtemail.Location = new System.Drawing.Point(722, 233);
+            this.txtemail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtemail.Name = "txtemail";
+            this.txtemail.PasswordChar = '\0';
+            this.txtemail.PlaceholderText = "";
+            this.txtemail.SelectedText = "";
+            this.txtemail.Size = new System.Drawing.Size(639, 91);
+            this.txtemail.TabIndex = 12;
+            // 
             // txbmatkhaumoi
             // 
             this.txbmatkhaumoi.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
@@ -77,7 +100,7 @@
             this.txbmatkhaumoi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbmatkhaumoi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbmatkhaumoi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbmatkhaumoi.Location = new System.Drawing.Point(764, 717);
+            this.txbmatkhaumoi.Location = new System.Drawing.Point(722, 607);
             this.txbmatkhaumoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbmatkhaumoi.Name = "txbmatkhaumoi";
             this.txbmatkhaumoi.PasswordChar = '\0';
@@ -91,7 +114,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.label1.Location = new System.Drawing.Point(460, 76);
+            this.label1.Location = new System.Drawing.Point(578, 89);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(540, 79);
@@ -110,7 +133,7 @@
             this.btdoimatkhau.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(49)))), ((int)(((byte)(159)))));
             this.btdoimatkhau.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btdoimatkhau.ForeColor = System.Drawing.Color.White;
-            this.btdoimatkhau.Location = new System.Drawing.Point(563, 1090);
+            this.btdoimatkhau.Location = new System.Drawing.Point(574, 1017);
             this.btdoimatkhau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btdoimatkhau.Name = "btdoimatkhau";
             this.btdoimatkhau.Size = new System.Drawing.Size(411, 111);
@@ -122,7 +145,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(185, 556);
+            this.label2.Location = new System.Drawing.Point(277, 419);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(286, 55);
@@ -133,7 +156,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(171, 736);
+            this.label3.Location = new System.Drawing.Point(238, 643);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(325, 55);
@@ -154,7 +177,7 @@
             this.txbnhaplaimkm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbnhaplaimkm.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbnhaplaimkm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbnhaplaimkm.Location = new System.Drawing.Point(764, 884);
+            this.txbnhaplaimkm.Location = new System.Drawing.Point(722, 820);
             this.txbnhaplaimkm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbnhaplaimkm.Name = "txbnhaplaimkm";
             this.txbnhaplaimkm.PasswordChar = '\0';
@@ -167,12 +190,12 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(171, 900);
+            this.label4.Location = new System.Drawing.Point(62, 856);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(475, 55);
+            this.label4.Size = new System.Drawing.Size(501, 55);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Nhập lại mật khẩu cũ";
+            this.label4.Text = "Nhập lại mật khẩu mới";
             // 
             // txbmatkhaucu
             // 
@@ -188,7 +211,7 @@
             this.txbmatkhaucu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txbmatkhaucu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txbmatkhaucu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txbmatkhaucu.Location = new System.Drawing.Point(764, 542);
+            this.txbmatkhaucu.Location = new System.Drawing.Point(722, 396);
             this.txbmatkhaucu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txbmatkhaucu.Name = "txbmatkhaucu";
             this.txbmatkhaucu.PasswordChar = '\0';
@@ -201,35 +224,13 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(328, 378);
+            this.label5.Location = new System.Drawing.Point(420, 259);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(143, 55);
-            this.label5.TabIndex = 12;
+            this.label5.TabIndex = 13;
             this.label5.Text = "Email";
-            // 
-            // txtemail
-            // 
-            this.txtemail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.txtemail.BorderRadius = 5;
-            this.txtemail.BorderThickness = 3;
-            this.txtemail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtemail.DefaultText = "";
-            this.txtemail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtemail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtemail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtemail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtemail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtemail.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtemail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtemail.Location = new System.Drawing.Point(764, 366);
-            this.txtemail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtemail.Name = "txtemail";
-            this.txtemail.PasswordChar = '\0';
-            this.txtemail.PlaceholderText = "";
-            this.txtemail.SelectedText = "";
-            this.txtemail.Size = new System.Drawing.Size(639, 91);
-            this.txtemail.TabIndex = 13;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // DoiMK
             // 

@@ -35,8 +35,10 @@
             this.btquanly = new Guna.UI2.WinForms.Guna2Button();
             this.btcaidat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btout = new Guna.UI2.WinForms.Guna2Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnthoat = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
+            this.btndoi_mk = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +71,8 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(309, 291);
             this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            this.panel1.MouseHover += new System.EventHandler(this.panel1_MouseHover);
             // 
             // bttaidulieu
             // 
@@ -87,6 +90,7 @@
             this.bttaidulieu.Name = "bttaidulieu";
             this.bttaidulieu.Size = new System.Drawing.Size(309, 252);
             this.bttaidulieu.TabIndex = 7;
+            this.bttaidulieu.CheckedChanged += new System.EventHandler(this.bttaidulieu_CheckedChanged);
             this.bttaidulieu.Click += new System.EventHandler(this.bttaidulieu_Click);
             // 
             // btquanly
@@ -124,6 +128,7 @@
             this.btcaidat.Size = new System.Drawing.Size(309, 252);
             this.btcaidat.TabIndex = 9;
             this.btcaidat.Click += new System.EventHandler(this.btcaidat_Click);
+            this.btcaidat.MouseHover += new System.EventHandler(this.btcaidat_MouseHover);
             // 
             // guna2Panel1
             // 
@@ -137,42 +142,72 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(309, 1360);
+            this.guna2Panel1.Size = new System.Drawing.Size(309, 1484);
             this.guna2Panel1.TabIndex = 2;
-            // 
-            // btout
-            // 
-            this.btout.BorderRadius = 5;
-            this.btout.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btout.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btout.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btout.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btout.FillColor = System.Drawing.Color.White;
-            this.btout.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btout.ForeColor = System.Drawing.Color.White;
-            this.btout.Image = ((System.Drawing.Image)(resources.GetObject("btout.Image")));
-            this.btout.ImageSize = new System.Drawing.Size(45, 45);
-            this.btout.Location = new System.Drawing.Point(1808, 14);
-            this.btout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btout.Name = "btout";
-            this.btout.Size = new System.Drawing.Size(68, 70);
-            this.btout.TabIndex = 16;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btout);
+            this.panel2.Controls.Add(this.btndoi_mk);
+            this.panel2.Controls.Add(this.btnDangXuat);
+            this.panel2.Controls.Add(this.btnthoat);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(309, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1504, 1360);
+            this.panel2.Size = new System.Drawing.Size(1331, 1484);
             this.panel2.TabIndex = 3;
+            this.panel2.MouseHover += new System.EventHandler(this.panel2_MouseHover);
+            // 
+            // btnthoat
+            // 
+            this.btnthoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnthoat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnthoat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnthoat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnthoat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnthoat.ForeColor = System.Drawing.Color.White;
+            this.btnthoat.Location = new System.Drawing.Point(7, 1386);
+            this.btnthoat.Name = "btnthoat";
+            this.btnthoat.Size = new System.Drawing.Size(304, 91);
+            this.btnthoat.TabIndex = 3;
+            this.btnthoat.Text = "guna2Button4";
+            this.btnthoat.Visible = false;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Location = new System.Drawing.Point(7, 1289);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(304, 91);
+            this.btnDangXuat.TabIndex = 2;
+            this.btnDangXuat.Text = "guna2Button3";
+            this.btnDangXuat.Visible = false;
+            // 
+            // btndoi_mk
+            // 
+            this.btndoi_mk.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btndoi_mk.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btndoi_mk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btndoi_mk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btndoi_mk.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btndoi_mk.ForeColor = System.Drawing.Color.White;
+            this.btndoi_mk.Location = new System.Drawing.Point(7, 1192);
+            this.btndoi_mk.Name = "btndoi_mk";
+            this.btndoi_mk.Size = new System.Drawing.Size(304, 91);
+            this.btndoi_mk.TabIndex = 4;
+            this.btndoi_mk.Text = "guna2Button3";
+            this.btndoi_mk.Visible = false;
             // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1813, 1360);
+            this.ClientSize = new System.Drawing.Size(1640, 1484);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -196,7 +231,9 @@
         private Guna.UI2.WinForms.Guna2Button btquanly;
         private Guna.UI2.WinForms.Guna2Button btcaidat;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button btout;
         private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2Button btndoi_mk;
+        private Guna.UI2.WinForms.Guna2Button btnDangXuat;
+        private Guna.UI2.WinForms.Guna2Button btnthoat;
     }
 }

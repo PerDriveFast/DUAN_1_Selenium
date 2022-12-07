@@ -39,6 +39,7 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.btpdf = new Guna.UI2.WinForms.Guna2Button();
             this.btexcel = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,7 +163,7 @@
             this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(492, 379);
+            this.guna2Button1.Location = new System.Drawing.Point(204, 379);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(268, 105);
@@ -180,12 +181,13 @@
             this.btpdf.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(9)))), ((int)(((byte)(9)))));
             this.btpdf.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btpdf.ForeColor = System.Drawing.Color.White;
-            this.btpdf.Location = new System.Drawing.Point(881, 379);
+            this.btpdf.Location = new System.Drawing.Point(583, 379);
             this.btpdf.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btpdf.Name = "btpdf";
             this.btpdf.Size = new System.Drawing.Size(347, 105);
             this.btpdf.TabIndex = 21;
-            this.btpdf.Text = "Lưu Database";
+            this.btpdf.Text = "Đọc file pdf";
+            this.btpdf.Click += new System.EventHandler(this.btpdf_Click);
             // 
             // btexcel
             // 
@@ -197,17 +199,36 @@
             this.btexcel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(119)))), ((int)(((byte)(16)))));
             this.btexcel.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btexcel.ForeColor = System.Drawing.Color.White;
-            this.btexcel.Location = new System.Drawing.Point(1346, 379);
+            this.btexcel.Location = new System.Drawing.Point(1056, 379);
             this.btexcel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btexcel.Name = "btexcel";
             this.btexcel.Size = new System.Drawing.Size(268, 105);
             this.btexcel.TabIndex = 20;
             this.btexcel.Text = "Lưu Excel";
             // 
+            // guna2Button2
+            // 
+            this.guna2Button2.BorderRadius = 15;
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.FillColor = System.Drawing.Color.Brown;
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(1456, 379);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(334, 105);
+            this.guna2Button2.TabIndex = 22;
+            this.guna2Button2.Text = "Lưu Database";
+            this.guna2Button2.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
             // frmTaiSoLieu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.btpdf);
             this.Controls.Add(this.btexcel);
             this.Controls.Add(this.guna2Button1);
@@ -217,6 +238,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmTaiSoLieu";
             this.Size = new System.Drawing.Size(1959, 1513);
+            this.Load += new System.EventHandler(this.frmTaiSoLieu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -231,5 +253,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btpdf;
         private Guna.UI2.WinForms.Guna2Button btexcel;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
