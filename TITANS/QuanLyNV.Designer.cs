@@ -33,7 +33,7 @@
             this.btnhoat = new Guna.UI2.WinForms.Guna2Button();
             this.btnxoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnsua = new Guna.UI2.WinForms.Guna2Button();
-            this.btnthem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnluu = new Guna.UI2.WinForms.Guna2Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txbdiachi = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.timthongtin = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btntaomoi = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,8 @@
             // 
             this.cbchucvu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbchucvu.FormattingEnabled = true;
+            this.cbchucvu.Items.AddRange(new object[] {
+            "Nhân viên"});
             this.cbchucvu.Location = new System.Drawing.Point(1168, 468);
             this.cbchucvu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbchucvu.Name = "cbchucvu";
@@ -122,23 +124,23 @@
             this.btnsua.Text = "Sửa";
             this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
-            // btnthem
+            // btnluu
             // 
-            this.btnthem.BorderRadius = 15;
-            this.btnthem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnthem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnthem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnthem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnthem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.btnthem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnthem.ForeColor = System.Drawing.Color.White;
-            this.btnthem.Location = new System.Drawing.Point(556, 715);
-            this.btnthem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnthem.Name = "btnthem";
-            this.btnthem.Size = new System.Drawing.Size(236, 98);
-            this.btnthem.TabIndex = 81;
-            this.btnthem.Text = "Lưu";
-            this.btnthem.Click += new System.EventHandler(this.btnthem_Click);
+            this.btnluu.BorderRadius = 15;
+            this.btnluu.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnluu.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnluu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnluu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnluu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btnluu.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnluu.ForeColor = System.Drawing.Color.White;
+            this.btnluu.Location = new System.Drawing.Point(556, 715);
+            this.btnluu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnluu.Name = "btnluu";
+            this.btnluu.Size = new System.Drawing.Size(236, 98);
+            this.btnluu.TabIndex = 81;
+            this.btnluu.Text = "Lưu";
+            this.btnluu.Click += new System.EventHandler(this.btnthem_Click);
             // 
             // label9
             // 
@@ -413,7 +415,7 @@
             this.timthongtin.BorderRadius = 15;
             this.timthongtin.BorderThickness = 3;
             this.timthongtin.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.timthongtin.DefaultText = "Tìm thông tin";
+            this.timthongtin.DefaultText = "";
             this.timthongtin.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.timthongtin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.timthongtin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -427,7 +429,7 @@
             this.timthongtin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.timthongtin.Name = "timthongtin";
             this.timthongtin.PasswordChar = '\0';
-            this.timthongtin.PlaceholderText = "";
+            this.timthongtin.PlaceholderText = "Tìm thông tin";
             this.timthongtin.SelectedText = "";
             this.timthongtin.Size = new System.Drawing.Size(336, 64);
             this.timthongtin.TabIndex = 62;
@@ -458,37 +460,38 @@
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(2022, 831);
             this.dataGridView1.TabIndex = 86;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // guna2Button1
+            // btntaomoi
             // 
-            this.guna2Button1.BorderRadius = 15;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(246, 715);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(236, 98);
-            this.guna2Button1.TabIndex = 87;
-            this.guna2Button1.Text = "Tạo mới";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btntaomoi.BorderRadius = 15;
+            this.btntaomoi.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btntaomoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btntaomoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btntaomoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btntaomoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(118)))), ((int)(((byte)(210)))));
+            this.btntaomoi.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btntaomoi.ForeColor = System.Drawing.Color.White;
+            this.btntaomoi.Location = new System.Drawing.Point(246, 715);
+            this.btntaomoi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btntaomoi.Name = "btntaomoi";
+            this.btntaomoi.Size = new System.Drawing.Size(236, 98);
+            this.btntaomoi.TabIndex = 87;
+            this.btntaomoi.Text = "Tạo mới";
+            this.btntaomoi.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // QuanLyNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.btntaomoi);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cbchucvu);
             this.Controls.Add(this.btnhoat);
             this.Controls.Add(this.btnxoa);
             this.Controls.Add(this.btnsua);
-            this.Controls.Add(this.btnthem);
+            this.Controls.Add(this.btnluu);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txbdiachi);
             this.Controls.Add(this.label8);
@@ -523,7 +526,7 @@
         private Guna.UI2.WinForms.Guna2Button btnhoat;
         private Guna.UI2.WinForms.Guna2Button btnxoa;
         private Guna.UI2.WinForms.Guna2Button btnsua;
-        private Guna.UI2.WinForms.Guna2Button btnthem;
+        private Guna.UI2.WinForms.Guna2Button btnluu;
         private System.Windows.Forms.Label label9;
         private Guna.UI2.WinForms.Guna2TextBox txbdiachi;
         private System.Windows.Forms.Label label8;
@@ -544,6 +547,6 @@
         private Guna.UI2.WinForms.Guna2TextBox timthongtin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btntaomoi;
     }
 }

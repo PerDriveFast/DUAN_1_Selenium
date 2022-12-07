@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUS;
 using DTO;
+using DAL;
 using System.Net;
 using System.Net.Mail;
+using Guna.UI2.WinForms;
 
 namespace TITANS
 {
@@ -21,46 +23,58 @@ namespace TITANS
             InitializeComponent();
            
         }
-
+        string vaitro;
         Users_DTO nhanvien = new Users_DTO();
         Users_BUS NhanVien_BUS = new Users_BUS();
-
+        Users_DAL users_DAL = new Users_DAL();
        public void Login()
         {
-            Users_DTO nv = new Users_DTO();
-            nv.USERNAME = txbemail.Text;
-            nv.PASSWORD = (txbpassword.Text);
-
-            if (NhanVien_BUS.NhanVienDangNhap(nv))//successfull login
+            try
             {
-                Properties.Settings.Default.isSave = ckremember.Checked;
-                if (ckremember.Checked)
+                Users_DTO nv = new Users_DTO();
+                nv.USERNAME = txbemail.Text;
+                nv.PASSWORD = (txbpassword.Text);
+
+                if (NhanVien_BUS.NhanVienDangNhap(nv))//successfull login
                 {
-                    Properties.Settings.Default.txbemail = txbemail.Text;
-                    Properties.Settings.Default.txbemail = txbpassword.Text;
+                    Properties.Settings.Default.isSave = ckremember.Checked;
+                    if (ckremember.Checked)
+                    {
+                        Properties.Settings.Default.txbemail = txbemail.Text;
+                        Properties.Settings.Default.txbemail = txbpassword.Text;
+                    }
+                    Properties.Settings.Default.Save();
+
+
+                    DataTable dt = users_DAL.VaiTroNhanVien(nv.USERNAME);
+                    vaitro = dt.Rows[0][0].ToString();
+                    FormMenu menu = new FormMenu(txbemail.Text, txbpassword.Text, dt.Rows[0][0].ToString());
+           //         FormKhachHang formKhach = new FormKhachHang(guna2TextBox1.Text);
+
+              //      FormHang formHang = new FormHang(txbemail.Text);
+
+               //     FormMenu menu = new FormMenu();
+                    menu.email = txbemail.Text;
+
+                    
+
+                    this.Hide();
+                    menu.ShowDialog();
+                    this.Show();
                 }
-                Properties.Settings.Default.Save();
-
-
-                //DataTable dt = Users_BUS.VaiTroNhanVien(nv.USERNAME);
-                //vaitro = dt.Rows[0][0].ToString();
-
-                FormMenu menu = new FormMenu();
-
-                //FormKhachHang formKhach = new FormKhachHang(guna2TextBox1.Text);
-                //FormHang formHang = new FormHang(guna2TextBox1.Text);
-
-                this.Hide();
-                menu.ShowDialog();
-                this.Show();
+                else
+                {
+                    MessageBox.Show("Đăng nhập không thành công, kiểm tra lại email hoặc mật khẩu.");
+                    txbemail.Text = null;
+                    txbpassword.Text = null;
+                    txbemail.Focus();
+                }
             }
-            else
+            catch(Exception e)
             {
-                MessageBox.Show("Đăng nhập không thành công, kiểm tra lại email hoặc mật khẩu.");
-                txbemail.Text = null;
-                txbpassword.Text = null;
-                txbemail.Focus();
+                throw;
             }
+           
         }
 
        public void QuenMk()
@@ -167,6 +181,8 @@ namespace TITANS
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            FormMenu formMenu = new FormMenu();
+
             Login();
         }
 

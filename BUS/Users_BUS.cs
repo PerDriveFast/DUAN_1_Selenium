@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using DTO;
 using DAL;
+using System.Security.Cryptography;
 
 namespace BUS
 {
@@ -29,5 +30,15 @@ namespace BUS
         {
             return nv_DAL.insertNhanVien(nhanVien);
         }
+
+        public bool UpdateMatKhau(string email, string matkhaucu, string maukhaumoi)
+        {
+            return nv_DAL.UpdateMatKhau(email, matkhaucu, maukhaumoi);
+        }
+        public DataTable VaiTroNhanVien(string email)
+        {
+            return nv_DAL.VaiTroNhanVien(email);
+        }
+        ////sssss
     }
 }

@@ -136,7 +136,7 @@ namespace DAL
             return false;
         }
 
-        public DataTable SearchNhanVien(string email)
+        public DataTable SearchNhanVien(string tenNhanvien)
         {
             // using store procedure
             try
@@ -146,7 +146,7 @@ namespace DAL
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "timkiemNhanVien";
-                cmd.Parameters.AddWithValue("tim", email);
+                cmd.Parameters.AddWithValue("tim", tenNhanvien);
                 cmd.Connection = _conn;
                 DataTable dtKhach = new DataTable();
                 dtKhach.Load(cmd.ExecuteReader());
@@ -158,31 +158,6 @@ namespace DAL
                 _conn.Close();
             }
         }
-        public bool UpdateMatKhau(string email,string matKhauCu,string matKhauMoi)
-        {
-            try
-            {
-                _conn.Open();
-                SqlCommand cmd = new SqlCommand();
-                cmd.Connection = _conn;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "chgpwd";
-                cmd.Parameters.AddWithValue("email", email);
-                cmd.Parameters.AddWithValue("@opwd", matKhauCu);
-                cmd.Parameters.AddWithValue("@npwd", matKhauMoi);
-
-                if (cmd.ExecuteNonQuery() > 0)
-                {
-                    return true;
-                }
-            }
-            catch(Exception e)
-            { }
-            finally
-            {
-                _conn.Close();
-            }
-            return false;
-        }
+       
     }
 }
